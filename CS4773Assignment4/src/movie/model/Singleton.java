@@ -9,7 +9,6 @@ public class Singleton extends Observable {
 	
 	private Singleton() {
 		model = new Movie(null, 0, null, null, 0);
-		System.out.println("Singleton initialized");
 	}
 	
 	public static Singleton getInstance() {
