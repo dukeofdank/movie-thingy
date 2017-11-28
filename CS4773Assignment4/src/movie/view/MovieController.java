@@ -92,6 +92,7 @@ public class MovieController implements Initializable, Observer {
 		releaseYear.textProperty().setValue(Integer.toString(temp.getReleaseYear()));
 		writer.textProperty().setValue(temp.getWriter());
 		ratingText.textProperty().setValue(Integer.toString(temp.getRating()));
+		ratingSlider.valueProperty().setValue(temp.getRating());
 	}
 
 }
