@@ -73,6 +73,15 @@ public class MovieController implements Initializable, Observer {
 				model.setWriter(newValue);
 			}			
 		});
+		ratingSlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				ratingText.textProperty().setValue(Integer.toString(newValue.intValue()));
+				model.setRating(newValue.intValue());
+			}
+		});		
+		
 	}
 
 	@Override
@@ -82,6 +91,7 @@ public class MovieController implements Initializable, Observer {
 		director.textProperty().setValue(temp.getDirector());
 		releaseYear.textProperty().setValue(Integer.toString(temp.getReleaseYear()));
 		writer.textProperty().setValue(temp.getWriter());
+		ratingText.textProperty().setValue(Integer.toString(temp.getRating()));
 	}
 
 }

@@ -57,4 +57,14 @@ public class Singleton extends Observable {
 	public String getWriter() {
 		return model.getWriter();
 	}
+	
+	public void setRating(int rating) {
+		model.setRating(rating);
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public int getRating() {
+		return model.getRating();
+	}
 }
